@@ -1,7 +1,0 @@
-require 'test_helper'
-
-class CnabUploaderControllerTest < ActionDispatch::IntegrationTest
-  test 'file should be uploaded' do
-
-  end
-end
