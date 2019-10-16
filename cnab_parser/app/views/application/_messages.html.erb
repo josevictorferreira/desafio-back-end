@@ -1,0 +1,29 @@
+<% if flash[:error] %>
+  <article class="message is-danger">
+    <div class="message-header">
+      <p>Erro!</p>
+      <button class="delete" aria-label="delete"></button>
+    </div>
+    <div class="message-body">
+      <%= flash[:error] %>
+    </div>
+  </article>
+<% elsif flash[:success] %>
+  <article class="message is-success">
+    <div class="message-header">
+      <p>Sucesso!</p>
+      <button class="delete" aria-label="delete"></button>
+    </div>
+    <div class="message-body">
+      <%= flash[:success] %>
+    </div>
+  </article>
+<% end %>
+
+<script charset="utf-8">
+$(document).ready(function () {
+  $(" .delete ").on('click', function () {
+    $(this).closest(".message").remove();
+  });
+});
+</script>

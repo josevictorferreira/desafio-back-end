@@ -1,0 +1,28 @@
+<nav class="navbar is-transparent">
+  <div id="navbarExampleTransparentExample" class="navbar-menu">
+
+    <div class="navbar-end">
+      <div class="navbar-item">
+        <div class="field is-grouped">
+          <p class="control">
+            <% if current_page?(root_path) %>
+              <a class="button is-primary" href="/stores">
+                <span class="icon">
+                  <i class="fas fa-list"></i>
+                </span>
+                <span>Listar Lojas</span>
+              </a>
+            <% else %>
+              <a class="button is-primary" href="/">
+                <span class="icon">
+                  <i class="fas fa-upload"></i>
+                </span>
+                <span>Importar Arquivo</span>
+              </a>
+            <% end %>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>

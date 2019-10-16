@@ -1,0 +1,37 @@
+<div class="columns is-centered uploader">
+  <div class="column is-half is-centered box">
+    <%= render 'messages' %>
+    <h1 class="title">CNAB</h1>
+    <h2 class="subtitle">Faça o upload do arquivo no formato especificado.</h2>
+    <%= form_with(url: "cnab_uploader/upload", multipart: true) do %>
+      <div class="field">
+        <div class="file is-centered is-boxed is-success has-name">
+          <label class="file-label">
+            <input class="file-input" type="file" name="file">
+            <span class="file-cta">
+              <span class="file-icon">
+                <i class="fas fa-upload"></i>
+              </span>
+              <span class="file-label">
+                Escolha o arquivo…
+              </span>
+            </span>
+            <span class="file-name">
+              Sem arquivo ...
+            </span>
+          </label>
+        </div>
+      </div>
+      <input type="submit" value="Enviar" class="button is-primary is-pulled-right">
+    <% end %>
+  </div>
+</div>
+
+<script charset="utf-8">
+  $(document).ready(function () {
+    $(" .file-input ").on('change', function () {
+      name = this.files[0].name;
+      $('.file-name').first().html(name);
+    });
+  });
+</script>

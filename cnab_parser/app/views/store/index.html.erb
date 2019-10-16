@@ -1,0 +1,32 @@
+<h1 class="title">Listagem de Lojas</h1>
+<h2 class="subtitle">Todas nas lojas importadas no sistema.</h2>
+<table class="table is-hoverable tabela">
+  <thead>
+    <tr>
+      <th width="10">ID</th>
+      <th width="90">Loja</th>
+    </tr>
+  </thead>
+  <tbody>
+  <% @stores.each do |store| %>
+    <tr data-link="<%= store_path(store) %>">
+      <td><%= store.id %></td>
+      <td><%= store.name %></td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>
+
+<script charset="utf-8">
+  $(document).ready(function () {
+    $("tr[data-link]").click(function() {
+      window.location = $(this).data("link")
+    })
+  })
+</script>
+
+<style type="text/css" media="screen">
+tr {
+  cursor: pointer;
+}
+</style>

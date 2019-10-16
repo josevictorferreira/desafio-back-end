@@ -1,0 +1,2 @@
+module CnabUploaderHelper
+end

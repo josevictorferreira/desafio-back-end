@@ -1,0 +1,38 @@
+<h1 class="title">Transações da loja <%= @store.name %></h1>
+<h2 class="subtitle">Veja todas as transações importadas.</h2>
+<table class="table is-striped is-centered tabela">
+  <thead>
+    <tr>
+      <th width="35">Data</th>
+      <th width="10">Tipo</th>
+      <th width="15">CPF</th>
+      <th width="15">Cartão</th>
+      <th width="20">Representante</th>
+      <th width="5" align="right">Valor</th>
+    </tr>
+  </thead>
+  <tfoot>
+    <tr>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th>
+        <strong>Saldo: <%= '%.2f' % @store.balance %></strong>
+      </th>
+    </tr>
+  </tfoot>
+  <tbody>
+    <% @store.transactions.each do |transaction| %>
+      <tr>
+        <td><%= transaction.date %></td>
+        <td><%= transaction.transaction_type[:description] %></td>
+        <td><%= transaction.cpf %></td>
+        <td><%= transaction.card %></td>
+        <td><%= transaction.store_owner %></td>
+        <td align="right"><%= transaction.value_str %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

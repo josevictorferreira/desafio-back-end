@@ -11,7 +11,15 @@
 
   <body>
     <div class="container">
-      <%= yield %>
+      <%= render "header" %>
+      <section class="section">
+        <div class="columns is-centered">
+          <div class="column is-three-quarters-desktop">
+            <%= yield %>
+          </div>
+        </div>
+      </section>
+      <%= render "footer" %>
     </div>
   </body>
 </html>
